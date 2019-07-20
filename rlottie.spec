@@ -70,7 +70,6 @@ rm -rf test
 
 %build
 %meson \
-    -Dtest=true \
     -Dthread=true \
     -Dexample=false \
     -Dtest=false \
