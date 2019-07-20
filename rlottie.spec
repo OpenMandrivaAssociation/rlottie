@@ -2,9 +2,9 @@
 %define libname	%mklibname rlottie %{major}
 %define devname	%mklibname -d rlottie
 
-%global commit0 0a430201270dbe141f0c67b92348ee9c796e194e
+%global commit0 cebc6c12811d28e4ee9c1e114474b714deb052ef
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20190707
+%global date 20190720
 
 Name: rlottie
 Version: 0
@@ -65,12 +65,15 @@ Requires: %{libname} = %{EVRD}
 %prep
 %autosetup -n %{name}-%{commit0}
 sed -e "s/, 'werror=true'//" -e "s/, 'optimization=s'//" -i meson.build
+export CXXFLAGS="%{optflags} -stdlib=libc++"
+rm -rf test
 
 %build
 %meson \
     -Dtest=true \
     -Dthread=true \
     -Dexample=false \
+    -Dtest=false \
     -Dcache=false \
     -Dlog=false \
     -Dmodule=false
