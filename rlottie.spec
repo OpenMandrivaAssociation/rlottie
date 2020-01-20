@@ -69,6 +69,10 @@ export CXXFLAGS="%{optflags} -stdlib=libc++"
 rm -rf test
 
 %build
+%ifarch %{arm}
+export CC=gcc
+export CXX=g++
+%endif
 %meson \
     -Dthread=true \
     -Dexample=false \
