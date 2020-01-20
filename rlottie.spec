@@ -69,7 +69,7 @@ export CXXFLAGS="%{optflags} -stdlib=libc++"
 rm -rf test
 
 %build
-%if %{arm}
+%ifarch %{arm}
 export CC=gcc
 export CXX=g++
 %endif
