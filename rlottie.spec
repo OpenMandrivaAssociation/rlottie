@@ -8,7 +8,7 @@
 
 Name: rlottie
 Version: 0
-Release: 1.%{date}git%{shortcommit0}%{?dist}
+Release: 2.%{date}git%{shortcommit0}%{?dist}
 
 # Main source: LGPLv2+
 # rapidjson (base) - MIT
@@ -20,6 +20,7 @@ Summary: Platform independent standalone library that plays Lottie Animation
 
 URL: https://github.com/Samsung/%{name}
 Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Patch0:	https://patch-diff.githubusercontent.com/raw/Samsung/rlottie/pull/252.patch
 
 BuildRequires: gtest-devel
 BuildRequires: meson
@@ -63,7 +64,7 @@ Requires: %{libname} = %{EVRD}
 %{summary}.
 
 %prep
-%autosetup -n %{name}-%{commit0}
+%autosetup -n %{name}-%{commit0} -p1
 sed -e "s/, 'werror=true'//" -e "s/, 'optimization=s'//" -i meson.build
 export CXXFLAGS="%{optflags} -stdlib=libc++"
 rm -rf test
