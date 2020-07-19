@@ -2,13 +2,13 @@
 %define libname	%mklibname rlottie %{major}
 %define devname	%mklibname -d rlottie
 
-%global commit0 f89efa7c54912fb75e2a0871a11b5bf2f363dfc3
+%global commit0 a718c7e2dfd7d292324ca50d596b02b786299252
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20190913
+%global date 20191224
 
 Name: rlottie
 Version: 0
-Release: 2.%{date}git%{shortcommit0}%{?dist}
+Release: 7.%{date}git%{shortcommit0}%{?dist}
 
 # Main source: LGPLv2+
 # rapidjson (base) - MIT
@@ -20,7 +20,6 @@ Summary: Platform independent standalone library that plays Lottie Animation
 
 URL: https://github.com/Samsung/%{name}
 Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Patch0:	https://patch-diff.githubusercontent.com/raw/Samsung/rlottie/pull/252.patch
 
 BuildRequires: gtest-devel
 BuildRequires: meson
