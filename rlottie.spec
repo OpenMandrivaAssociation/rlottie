@@ -2,13 +2,13 @@
 %define libname	%mklibname rlottie %{major}
 %define devname	%mklibname -d rlottie
 
-%global commit0 b0fcd867476c58304539ca7a6499c8473cb40a4d
+%global commit0 ff8ddfc4931cd520538bd125bb67600c8f66542d
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20200720
+%global date 20200825
 
 Name: rlottie
 Version: 0
-Release: 7.%{date}git%{shortcommit0}%{?dist}
+Release: 7.%{date}git%{shortcommit0}
 
 # Main source: LGPLv2+
 # rapidjson (base) - MIT
@@ -65,7 +65,6 @@ Requires: %{libname} = %{EVRD}
 %prep
 %autosetup -n %{name}-%{commit0} -p1
 sed -e "s/, 'werror=true'//" -e "s/, 'optimization=s'//" -i meson.build
-export CXXFLAGS="%{optflags} -stdlib=libc++"
 rm -rf test
 
 %build
