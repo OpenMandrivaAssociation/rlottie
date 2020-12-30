@@ -7,8 +7,8 @@
 %global date 20200825
 
 Name: rlottie
-Version: 0
-Release: 7.%{date}git%{shortcommit0}
+Version:	0.2
+Release:	1
 
 # Main source: LGPLv2+
 # rapidjson (base) - MIT
