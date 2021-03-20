@@ -2,9 +2,9 @@
 %define libname	%mklibname rlottie %{major}
 %define devname	%mklibname -d rlottie
 
-%global commit0 ff8ddfc4931cd520538bd125bb67600c8f66542d
+%global commit0 29b391b95913877b7234543da8b4a9ec6d8175d0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20200825
+%global date 20210320
 
 Name: rlottie
 Version:	0.2
