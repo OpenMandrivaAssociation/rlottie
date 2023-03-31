@@ -8,7 +8,7 @@
 
 Name: rlottie
 Version:	0.2
-Release:	1
+Release:	2
 
 # Main source: LGPLv2+
 # rapidjson (base) - MIT
